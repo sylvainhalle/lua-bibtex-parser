@@ -240,7 +240,7 @@ function Field:new(name, value)
 end
 
 function Field:__tostring()
-  local res = string.format("%s = %s}", self.name, get_tokens_raw(self._tokens))
+  local res = string.format("%s = {%s}", self.name, get_tokens_raw(self._tokens))
   return res
 end
 
