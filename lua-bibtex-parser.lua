@@ -320,6 +320,17 @@ function Library:tostring(block)
 
 end
 
+function Library:__tostring()
+  local bib_string = ""
+  bib_string = bib_string .. tostring(self.preamble or "")
+  for k, v in pairs(self.entry_dict) do
+    bib_string = bib_string .. tostring(v) .. "\n\n"
+  end
+  for i = 0, #self.comments do
+    bib_string = bib_string .. tostring(self.comments[i] or "") .. "\n\n"
+  end
+  return bib_string
+end
 
 ---@class Block
 ---@field _raw string
